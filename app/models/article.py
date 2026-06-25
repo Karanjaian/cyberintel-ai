@@ -1,5 +1,9 @@
+from datetime import datetime
+
 from sqlalchemy import Column, Integer, String, Text, DateTime
+
 from app.database.db import Base
+
 
 class Article(Base):
     __tablename__ = "articles"
@@ -15,3 +19,5 @@ class Article(Base):
     summary = Column(Text)
 
     published_at = Column(DateTime)
+
+    created_at = Column(DateTime, default=datetime.utcnow)
